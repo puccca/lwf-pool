@@ -1,25 +1,34 @@
-# Lisk pool distribution software
-This software is created by lisk delegate "dakk", please consider a small donation if you
-use this software: "2324852447570841050L" for lisk or "7725849364280821971S" for shift or
-"AZAXtswaWS4v8eYMzJRjpd5pN3wMBj8Rmk" for ark.
+# Oxy pool distribution software
+This software is created by lisk delegate "dakk" and forked by oxy delegate "irina18". 
+Please consider a small donation if you use this software: 
 
+dakk: "2324852447570841050L" for lisk or "7725849364280821971S" for shift or
+"AZAXtswaWS4v8eYMzJRjpd5pN3wMBj8Rmk" for ark or "6751953770724499337X" for oxy.
+
+irina18: "5889944472562896537L" for lisk or "18348163728189947664X" for oxy or "4698804119164051581LWF" for lwf.
+
+# Changes made by irina18:
+- Fees for each transaction are included in the share of voters
+- Sleep between transactions can be changed in config.json file
 
 ## Configuration
 Fork this repo; edit config.json and modify the first lines with your settings:
 
 - pubkey: your delegate pubkey
 - percentage: percentage to distribute
+- fee: the fee payed for making a transaction
+- sleep: seconds between payments
 - secret: your secret
 - secondsecret: your second secret or null if disabled
 - node: the lisk node where you get forging info
 - nodepay: the lisk node used for payments
-- minpayout: the minimum amount for a payout
+- minpayout: the minimum amount for a payout - if fee included in the share of voters, then minpayout should be 1.1
 - coin: the name of the coin (LISK, ARK, SHIFT, RISE, or whatever you want)
 - skip: a list of address to skip
 - donations: a list of object (address: amount) for send static amount every payout
 - donationspercentage: a list of object (address: percentage) for send static percentage every payout
 - logfile: file where you want to write pending and sent amounts
-- feededuct: true if you want to subtract fees from user payouts
+
 
 Now edit docs/index.html and customize the webpage.
 
