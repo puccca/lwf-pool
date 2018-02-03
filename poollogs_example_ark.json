@@ -1,6 +1,11 @@
 {
     "lastforged": 5156480000000,
     "lastpayout": 1492905600,
+    "forged": 0,
+    "totalpending": 0,
+    "totalweight": 0,
+    "totalpaid": 0,
+    "todistribute": 0,
     "accounts": {
     },
     "pending": {}
