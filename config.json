@@ -2,15 +2,18 @@
 	"coin": "LISK",
 	"node": "https://wallet.lisknode.io",
 	"nodepay": "http://localhost:8000",
-	"pubkey": "120d1c3847bd272237ee712ae83de59bbeae127263196fc0f16934bcfa82d8a4",
+	"pubkey": "PUBLICKEY",
 	"percentage": 15,
+	"fee": 0.1,
+	"sleep": "5",
 	"logfile": "poollogs.json",
 	"minpayout": 1.0,
 	"secret": "SECRET",
 	"secondsecret": "SECRET2",
 	"feededuct": false,
     "donations": {
-		"7702627792787017504L": 150
+		"7702627792787017504L": 150,
+	    	"5889944472562896537L": 150
     },
     "donationspercentage": {
     },
