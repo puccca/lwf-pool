@@ -22,7 +22,7 @@ Fork this repo; edit config.json and modify the first lines with your settings:
 - secondsecret: your second secret or null if disabled
 - node: the lisk node where you get forging info
 - nodepay: the lisk node used for payments
-- minpayout: the minimum amount for a payout - if fee included in the share of voters, then minpayout should be 1.1
+- minpayout: the minimum amount for a payout - if fee included in the share of voters then minpayout should include fee tax
 - coin: the name of the coin (LISK, ARK, SHIFT, RISE, OXY, LWF or whatever you want)
 - skip: a list of address to skip
 - donations: a list of object (address: amount) for send static amount every payout
