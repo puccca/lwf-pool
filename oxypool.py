@@ -74,6 +74,7 @@ def estimatePayouts (log):
 			continue
 			
 		payouts.append ({  "username": x['username'], "weight": float (x['balance']) / 100000000, "address": x['address'], "balance": (float (x['balance']) / 100000000 * forged) / weight, "totalweight": weight, "forged": int (rew) / 100000000})
+		#print (float (x['balance']) / 100000000, payouts [x['address']], x['address'])
 		
 	return (payouts, log, forged)
 	
