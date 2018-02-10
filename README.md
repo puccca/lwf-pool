@@ -1,15 +1,21 @@
-# DPOS pool distribution software
-This software is created by lisk delegate "dakk" and forked by oxy delegate "irina18". 
-Please consider a small donation if you use this software: 
+# Oxy pool distribution software
+This software is created by lisk delegate "dakk" and forked by oxy delegate "irina18". Please consider a small donation if you use this software:
 
-dakk: "2324852447570841050L" for lisk or "7725849364280821971S" for shift or
-"AZAXtswaWS4v8eYMzJRjpd5pN3wMBj8Rmk" for ark or "6751953770724499337X" for oxy.
+dakk: "2324852447570841050L" for lisk or "7725849364280821971S" for shift or "AZAXtswaWS4v8eYMzJRjpd5pN3wMBj8Rmk" for ark or "6751953770724499337X" for oxy.
 
 irina18: "5889944472562896537L" for lisk or "18348163728189947664X" for oxy or "4698804119164051581LWF" for lwf.
 
-# Changes made by irina18:
-- Fees for each transaction are included in the share of voters
-- Sleep between transactions can be changed in config.json file
+##Changes made by irina18:
+Fees for each transaction are included in the share of voters
+Sleep between transactions can be changed in config.json file
+Added information in poollogs.json file:
+- totalpaid
+- totalpending
+- forged - The amount of forged OXY from the last payments
+- totalweight
+- todistribute - The amount of OXY to distribute in the current payments
+- weight - The weight of each voter when running the oxypool.py
+- username
 
 ## Configuration
 Fork this repo; edit config.json and modify the first lines with your settings:
@@ -20,15 +26,14 @@ Fork this repo; edit config.json and modify the first lines with your settings:
 - sleep: seconds between payments
 - secret: your secret
 - secondsecret: your second secret or null if disabled
-- node: the lisk node where you get forging info
-- nodepay: the lisk node used for payments
-- minpayout: the minimum amount for a payout - if fee included in the share of voters then minpayout should include fee tax
-- coin: the name of the coin (LISK, ARK, SHIFT, RISE, OXY, LWF or whatever you want)
+- node: the oxy node where you get forging info
+- nodepay: the oxy node used for payments
+- minpayout: the minimum amount for a payout
+- coin: the name of the coin (LISK, ARK, SHIFT, RISE, OXY, or whatever you want)
 - skip: a list of address to skip
 - donations: a list of object (address: amount) for send static amount every payout
 - donationspercentage: a list of object (address: percentage) for send static percentage every payout
 - logfile: file where you want to write pending and sent amounts
-
 
 Now edit docs/index.html and customize the webpage.
 
@@ -53,11 +58,11 @@ First install requests:
 
 Then start it:
 
-`python3 liskpool.py`
+`python3 oxypool.py`
 
 or if you want to use another config file:
 
-`python3 liskpool.py -c config2.json`
+`python3 oxypool.py -c config2.json`
 
 It produces a file "payments.sh" with all payments shell commands. Run this file with:
 
@@ -73,35 +78,11 @@ To display the pool frontend, enable docs-site on github repository settings.
 
 The script is also runnable by cron using the -y argument:
 
-`python3 liskpool.py -y`
+`python3 oxypool.py -y`
 
-There is also a 'batch.sh' file which run liskpool, then payments.sh and copy the poollogs.json
+There is also a 'batch.sh' file which run oxypool, then payments.sh and copy the poollogs.json
 in the docs folder.
 
-
-### Avoid vote hoppers
-
-In some DPOS, some voters switch their voting weight from one delegate to another for
-receiving payout from multiple pools. A solution for that is the following flow:
-
-1. Run liskpool.py every hour with --min-payout=1000000 (a very high minpayout, so no payouts will be done but the pending will be updated)
-2. Run liskpool.py normally to broadcast the payments
-
-
-## Command line usage
-
-```
-usage: liskpool.py [-h] [-c config.json] [-y] [--min-payout MINPAYOUT]
-
-DPOS delegate pool script
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -c config.json        set a config file (default: config.json)
-  -y                    automatic yes for log saving (default: no)
-  --min-payout MINPAYOUT
-                        override the minpayout value from config file
-```
 
 ## License
 Copyright 2017 Davide Gessa
