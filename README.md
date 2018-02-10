@@ -5,7 +5,7 @@ dakk: "2324852447570841050L" for lisk or "7725849364280821971S" for shift or "AZ
 
 irina18: "5889944472562896537L" for lisk or "18348163728189947664X" for oxy or "4698804119164051581LWF" for lwf.
 
-##Changes made by irina18:
+## Changes made by irina18:
 Fees for each transaction are included in the share of voters
 Sleep between transactions can be changed in config.json file
 Added information in poollogs.json file:
