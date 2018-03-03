@@ -21,7 +21,7 @@ app.controller('indexCtrl', function($scope, $http) {
         }
     });
 
-    $http.get ('https://wallet.oxycoin.io/api/delegates/get?username=YOURDELEGATENAME').then (function (res) {
+    $http.get ('https://wallet.lwf.io/api/delegates/get?username=YOURDELEGATENAME').then (function (res) {
         $scope.delegate = res.data.delegate;
         $scope.weightvote = res.data.delegate.vote/100000000;
     });
