@@ -1,5 +1,5 @@
-# Oxy pool distribution software
-This software is created by lisk delegate "dakk" and forked by oxy delegate "irina18". Please consider a small donation if you use this software:
+# Lwf pool distribution software
+This software is created by lisk delegate "dakk" and forked by lwf delegate "irina18". Please consider a small donation if you use this software:
 
 dakk: "2324852447570841050L" for lisk or "7725849364280821971S" for shift or "AZAXtswaWS4v8eYMzJRjpd5pN3wMBj8Rmk" for ark or "6751953770724499337X" for oxy.
 
@@ -11,10 +11,10 @@ Sleep between transactions can be changed in config.json file
 Added information in poollogs.json file:
 - totalpaid
 - totalpending
-- forged - The amount of forged OXY from the last payments
+- forged - The amount of forged LWF from the last payments
 - totalweight
-- todistribute - The amount of OXY to distribute in the current payments
-- weight - The weight of each voter when running the oxypool.py
+- todistribute - The amount of LWF to distribute in the current payments
+- weight - The weight of each voter when running the lwfpool.py
 - username
 
 ## Configuration
@@ -26,10 +26,10 @@ Fork this repo; edit config.json and modify the first lines with your settings:
 - sleep: seconds between payments
 - secret: your secret
 - secondsecret: your second secret or null if disabled
-- node: the oxy node where you get forging info
-- nodepay: the oxy node used for payments
+- node: the lwf node where you get forging info
+- nodepay: the lwf node used for payments
 - minpayout: the minimum amount for a payout
-- coin: the name of the coin (LISK, ARK, SHIFT, RISE, OXY, or whatever you want)
+- coin: the name of the coin (LISK, ARK, SHIFT, RISE, OXY, LWF, or whatever you want)
 - skip: a list of address to skip
 - donations: a list of object (address: amount) for send static amount every payout
 - donationspercentage: a list of object (address: percentage) for send static percentage every payout
@@ -58,11 +58,11 @@ First install requests:
 
 Then start it:
 
-`python3 oxypool.py`
+`python3 lwfpool.py`
 
 or if you want to use another config file:
 
-`python3 oxypool.py -c config2.json`
+`python3 lwfpool.py -c config2.json`
 
 It produces a file "payments.sh" with all payments shell commands. Run this file with:
 
@@ -78,9 +78,9 @@ To display the pool frontend, enable docs-site on github repository settings.
 
 The script is also runnable by cron using the -y argument:
 
-`python3 oxypool.py -y`
+`python3 lwfpool.py -y`
 
-There is also a 'batch.sh' file which run oxypool, then payments.sh and copy the poollogs.json
+There is also a 'batch.sh' file which run lwfpool, then payments.sh and copy the poollogs.json
 in the docs folder.
 
 
