@@ -1,6 +1,6 @@
 {
-	"coin": "OXY",
-	"node": "https://wallet.oxycoin.io",
+	"coin": "LWF",
+	"node": "https://wallet.lwf.io",
 	"nodepay": "YOURNODEURL",
 	"pubkey": "YOURPUBLICKEY",
 	"percentage": 90,
@@ -11,8 +11,7 @@
 	"secret": "YOURFIRSTSECRET",
 	"secondsecret": "YOURSECONDSECRET",
     "donations": {
-    		"6751953770724499337X": 150,
-	    	"18348163728189947664X": 150
+    		"4698804119164051581LWF": 150
     },
     "donationspercentage": {
     },
