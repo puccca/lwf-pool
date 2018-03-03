@@ -1,3 +1,3 @@
-python3 oxypool.py -y
+python3 lwfpool.py -y
 bash payments.sh
 cp poollogs.json docs/poollogs.json
